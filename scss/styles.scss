@@ -1,0 +1,667 @@
+/* IMPORTS */
+@import "variables.scss";
+@import "mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500&display=swap');
+
+/* ------COMMON STYLES--------- */
+
+body {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 14px;
+}
+
+.boton:hover {
+    font-weight: bold;    
+}
+a:hover {
+    @extend .boton;
+}
+
+@media (max-width: 991px) {
+    body {
+        font-size: 10px; 
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 8px; 
+    }
+}
+
+/* -----------------------------------
+/* ---------MAIN-CONTAINER----
+----------------------------------- */
+
+.main-container {
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    margin: 0 auto;
+    width: $width80;
+}
+
+.container2 {
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    margin: 0 auto;
+    width: $width80 + 10;
+}
+
+/* -----------------------------------
+/* ---------HEADER------------
+----------------------------------- */
+.logo {
+    text-align: center;
+    margin: 0 auto;
+    img {
+        height: 145px;
+        padding: 10px;
+        max-height: 550px;
+    }
+}
+.menu1 {
+    background: $grey;
+    display: flex;
+    justify-content: center; 
+    li {
+        padding: 1.2em 0.5em;
+        list-style-type: none;
+        font-size: 1em;
+        display: block;
+        &:hover{
+            background: rgba(128,128,128,0.8);
+            font-weight: bold;
+        }
+    }
+    a {
+        color: $black;
+        text-decoration: none;
+        &:hover {
+            color: $grey;
+        }
+    }
+    .current{
+        background: rgba(128,128,128,0.8);
+        font-weight: bold;
+    }
+    .lang {
+        position: absolute;
+        margin-left: 70%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .menu1 {
+        flex-direction: column;
+        align-content: center; 
+        .lang {
+            position: relative;
+            margin: auto;
+        }
+        li{
+            margin: 0 auto;    
+        }
+    } 
+    .title2, 
+    .title3, 
+    .title4,
+    .title5,
+    .title6,
+    .title7,
+    .title8 {
+        max-height: 85px;
+    }
+}
+
+
+
+/* -----------------------------------
+/* ---------FOOTER------------
+----------------------------------- */
+
+footer {
+    background: #908983;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    section {
+        padding: 15px 50px;
+    }
+    h1 {
+        color: $white;
+        font-weight: lighter;
+        line-height: 2em;
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+
+}
+
+
+@media (max-width: 1024px) {
+    footer {
+        @include flexColumn;
+        section {
+            padding: 0px 50px;
+        } 
+    }
+}
+
+/* ----FOOTER - CONTACT-US---- */
+.contact-us {
+    p,
+    a {
+        color: $orange;
+        font-size: 1em;
+        text-decoration: none;
+        text-align: left;
+        line-height: 2.5em;
+    }
+    form {
+        width: 100%;
+        margin: 1em 0 0;
+        color: $white;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-column-gap: .5em;
+        label {
+            text-align: left;
+            grid-column: 1 / 2;
+            font-size: 1em;
+        }
+        input {
+            grid-column: 2 / 3;
+            border-radius: 10px;
+            border: none;
+        }
+        .legal .button {
+            padding: .2em 1.2em;
+            margin: 1.5em 2.5em;
+            font-size: 1em;
+        }  
+    }
+    textarea {
+        border-radius: 10px;
+        border: none;
+    }
+    .legal {
+        grid-column: 2 / 3;
+        display: flex;
+        color: $orange;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .button {
+        grid-column: 1 / 3;
+        border-radius: 1em;
+        padding: 0.7em 1.5em;
+        margin: 2em auto 0.5em;
+        background-color: $orange;
+        color: $white;
+        border-style: none;
+    }
+}
+
+/* ----FOOTER - SOCIAL-NETWORKS---- */
+.social-networks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    margin-top: 1em;
+    margin-left: 9.5em;
+    width: 7em;
+    img {
+        width: 3.3em;
+    }
+}
+
+/* ----FOOTER - LOCATION---- */
+
+.location { 
+    img {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10%;
+    padding: 1em 1.8em;
+    }
+    p {
+        color: $orange;
+        font-size: 1em;
+        text-decoration: none;
+        text-align: left;
+        line-height: 2.5em;
+    }
+}
+
+/* -----------------------------------
+/* ---------OTHER------------
+----------------------------------- */
+
+/* ---- HEADER'STITLE 1, 2, 3, 4, 5, 6, 7, 8---- */
+.title1{
+    position: relative;
+    text-align: center;
+    img {
+        width: 100%;
+        display: block;
+    }
+    .main-motto {
+        @include main-motto;
+    }
+}
+
+.title2, 
+.title3,
+.title4,
+.title5,
+.title6,
+.title7,
+.title8 {
+    position: relative;
+    text-align: center;
+    background-position: center top;
+    background-size: 100% auto;
+    width: 100%;
+    height: 180px;
+    ;
+}
+
+.title2 {
+    background-image: url("../img/cabecera-quienes-somos.jpg");
+    .main-motto {
+        @include main-motto;
+    }
+}
+.title3 {
+    background-image: url("../img/cabecera-productos.jpg");
+    .main-motto {
+        @include main-motto;
+    }
+}
+.title4 {
+    background-image: url("../img/cabecera-realizar-pedido.jpg");
+    .main-motto {
+        @include main-motto;
+    }
+}
+.title5 {
+    background-image: url("../img/cabecera-contactanos.jpg");
+    .main-motto {
+        @include main-motto;
+    }
+}
+.title6 {
+    background-image: url("../img/cabecera-montana.jpg");
+    .main-motto {
+        @include main-motto;
+    }
+}
+.title7 {
+    background-image: url("../img/cabecera-carretera.jpg");
+    .main-motto {
+        @include main-motto;
+    }
+}
+.title8 {
+    background-image: url("../img/cabecera-electricas.jpg");
+    .main-motto {
+        @include main-motto;
+    }
+}
+
+/* ----NAV  - MENU 2---- */
+.menu2 {
+    background: $grey;
+    display: flex;
+    justify-content: center;
+    li {
+        padding: .2em .2em;
+        &:hover {
+            font-weight: bold;
+        }
+    }
+    .current {
+        font-weight: bold;
+    }
+    a {
+        color: $black;
+        text-decoration: none;
+        &:hover {
+            color: $grey;
+        }
+    }
+}
+
+/* ----MAIN-PAGE:MAIN CONTENT---- */
+
+.content1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    h2 {
+        color: #624D37;
+        text-align: center;
+        line-height: 2.5em;
+        font-size: 1em;
+        margin-top: 1em;
+    }
+    p {
+        font-size: .8em;
+    }
+}
+
+
+ /* ----MAIN-CONTENT: products ---- */
+
+.products {
+    padding: 0 5%;
+    .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    img {
+        width: 97%;
+        object-fit: cover;
+        border-radius: 5%;
+        margin: 5% auto;
+        box-shadow:0 0 16px rgba(0,0,0,0.8);
+    }
+    a {
+        background-color: $orange;
+        margin: 0 auto;
+        border-radius: 1em;
+        padding: 0.5em 0.7em;
+        margin: 0.5em auto;
+        color: $white;
+        border-style: none;
+        text-decoration: none;
+        font-size: .8em;
+    }
+}
+
+
+ /* ----MAIN-CONTENT: form---- */
+
+.form1 {
+    .datos-registro {
+        display: flex;
+        padding: 0 25%;
+        flex-direction: column;
+        input {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: hidden;
+            font-size: .8em;
+        }
+    }
+    .datos-envio {
+        background-color: $grey;
+        display: flex;
+        padding: 0 25%;
+        flex-direction: column;
+        input {
+            background-color: $white;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: hidden;
+            font-size: .8em;
+        }
+        label {
+            font-size: .8em;
+        }
+    }
+    .send {
+        display: flex;
+        float: right;
+        align-items: center;
+        font-size: .8em;
+        label {
+            line-height: 3em;
+            margin-right: 4.2em;
+            font-size: .8em;
+        }
+        .button{
+            border-radius: 1em;
+            padding: 1.6em 1.2em;
+            margin: 1.5em 2.5em;
+            background-color: #624D37;
+            color: $white;
+            border-style: none;
+            font-size: .8em;
+            
+        }
+    }
+}
+
+/* ----CONTENT IN COLUMNS---- */
+.contentColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    img {
+        width: 80%;
+        margin: 5% 10%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 20px 60px 10px;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+    h3 {
+        color: #624D37;
+        margin: 2em 10% 1em;
+    }
+    p {
+        margin: 0 10%;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    .button {
+        align-self: flex-start;
+        border-radius: 1em;
+        padding: 0.5em 0.7em;
+        margin: 1em 10%;  
+        color: $white;
+        border-style: none;
+        background-color: $orange;
+    }
+}
+
+/* ---- PAG PRODUCTS---- */
+
+.contentProducts {
+    display: flex;
+    margin: auto 20% 2% 20% ;
+    h2 {
+        color: #624D37;
+        text-align: left;
+        line-height: 2.5em;
+        font-size: 1em;
+        margin-top: 1em;
+    }
+    p {
+        font-size: .8em;
+    }
+    
+}
+
+/* ---- PAG ORDERS---- */
+
+.contentOrders {
+    display: flex;
+    margin: auto 10% 2% 10% ;
+    h2{
+        color: #624D37;
+        text-align: left;
+        line-height: 2.5em;
+        font-size: 1em;
+        margin-top: 1em;
+    }
+    p {
+        font-size: .8em;
+    }
+}
+
+
+.productsOrders {
+    padding: 0 5%;
+    img {
+        width: 40%;
+        object-fit: cover;
+        border-radius: 5%;
+        margin: 5% auto;
+        box-shadow:0 0 16px rgba(0,0,0,0.8);
+    }
+    td {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-right: 60px;
+        padding-left: 50px;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+    th {
+        color: #624D37;
+        text-align: center;
+    }
+    h3 {
+        color: $orange;
+        font-size: 0.7em;
+        text-decoration: none;
+        text-align: left;
+        line-height: 2.5em;
+    
+    }
+    p {
+        color: $black;
+        font-size: 0.5em;
+        text-decoration: none;
+        text-align: left;
+        line-height: 2.5em;
+    
+    }
+}
+
+/* Tabla Adaptativa */
+@media
+only screen 
+and (max-width: 760px), (min-device-width: 768px) 
+and (max-device-width: 1024px)  {
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        margin: 0 0 1rem 0;
+    }
+        
+    tr:nth-child(odd) {
+        background: #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        font-size: 10px;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before { content: ""; }
+    td:nth-of-type(2):before { content: "Producto"; }
+    td:nth-of-type(3):before { content: "Cantidad"; }
+    td:nth-of-type(4):before { content: "Precio"; }
+
+    /*Fix this */
+    td:nth-child(10):before {
+        display: none;
+    }
+
+
+}
+
+/* ---- PAG CONTACT---- */
+
+
+.contactContent {
+    .contactForm form {
+        width: 30%;
+        margin: 1em auto 1.5em;
+        background-color: $grey;
+        padding: 1.5em 2em;
+        label {
+            color: $black;
+            font-weight: bold;
+        }
+    }
+}
+.contactForm { 
+    h1 {
+        margin: 2.3em;
+    }
+    a,
+    p {
+        color: $orange;
+        font-size: 0.9em;
+        text-decoration: none;
+        text-align: center;
+        line-height: 2.5em; 
+    }
+    form {
+        width: 100%;
+        margin: 1em 0 0;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        label {
+            text-align: left;
+            font-size: .8em;
+            margin-left: -7em;
+        }
+        input {
+            border-radius: 10px;
+            border: none;
+            margin-right: 9em;
+        }
+        .legal {
+            display: flex;
+            color: $orange;
+            align-items: center;
+            justify-content: left;
+            .button {
+                padding: 0.8em 2.2em;
+                margin: 1.5em 2.5em;
+                font-size: .8em;
+            } 
+        }
+    }
+    textarea {
+        border-radius: 10px;
+        border: none;
+        height: 15em;
+    }
+    .button {
+        border-radius: 1em;
+        padding: 0.7em 1.5em;
+        margin: 2em auto 0.5em;
+        background-color: $orange;
+        color: $white;
+        border-style: none;
+    }
+}

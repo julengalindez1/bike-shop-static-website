@@ -1,0 +1,149 @@
+<!------------------------------------------------------------------------
+
+Nombre: Julen Galindez
+Fecha:  23/12/2022
+Modulo: Desarrollo Interfaces Web.
+Objetivo: Elaboración de una interfaz para un sitio web para un negocio de
+          bicicletas situado en Araba. El nombre del cartel que figura encima 
+          de la puerta del local es: "Bike Station"
+Tarea:  DIW03 - Tarea evaluativa 01
+
+------------------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css" />
+        <title>Inicio</title>
+    </head>
+
+    <body>
+        <main class="main-container">
+            <header>
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="img/logotipo.png" alt="logotipo" />
+                    </a>
+                </h1>
+
+                <!--- MENU PRINCIPAL --->
+                <nav>
+                    <ul class="menu1">
+                        <li class="current"><a href="index.html">INICIO</a></li>
+                        <li><a href="quienes-somos.html">QUIÉNES SOMOS</a></li>
+                        <li><a href="productos.html">PRODUCTOS</a></li>
+                        <li><a href="realizar-pedido.html">REALIZAR PEDIDO</a></li>
+                        <li><a href="contactar.html">CONTÁCTANOS</a></li>
+                        <li class="lang">
+                            <a href="index.html">ES</a>
+                            /    
+                            <a href="index.html">EU</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!--- CABECERA CON IMAGEN Y TÍTULO --->
+            <section class="title1">
+                <img src="img/imagen-principal.jpg" alt="bici-carretera-montana" />
+                <div class="main-motto">
+                    <h1>Expertos en bicicletas desde 2020</h1>
+                </div>
+            </section>
+
+            <!--- CONTENIDO PRINCIPAL --->
+            <section class="content1">
+                <section class="products">
+                    <h2>NUESTROS PRODUCTOS</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Corrupti officiis quo perspiciatis ab deleniti, quibusdam rerum nesciunt,
+                        sint eaque cum accusamus mollitia molestiae? Sunt mollitia tempora dolore,
+                        unde corrupti eum.
+                    </p>
+                    <div class="links">
+                        <img src="img/bicicleta-montana-boton.jpg" alt="bicicleta-montana" />
+                        <img src="img/bicicleta-carretera-boton.jpg" alt="bicicleta-carretera" />
+                        <img src="img/bicicleta-eletrica-boton.jpg" alt="bicicleta-electrica" />
+                        <a href="productos-montana.html">Bicicletas de montaña</a>
+                        <a href="productos-carretera.html">Bicicletas de carretera</a>
+                        <a href="productos-eléctricas.html">Bicicletas de carretera</a>
+                    </div>
+                </section>
+
+                <!--- FORMUALARIO --->
+                <form class="form1">
+                    <h2>REGÍSTRATE</h2>
+                    <section class="datos-registro">               
+                        <input type="text" name="nombre" placeholder="Nombre"><br>
+                        <input type="text" name="apellidos" placeholder="Apellidos"><br>
+                        <input type="text" name="email" placeholder="Email"><br>
+                        <input type="text" name="email" placeholder="Password"><br>
+                        
+                    </section>
+                    <section class="datos-envio">
+                        <h2>Datos de envio</h2>
+                        <input type="text" name="direccion" placeholder="Dirección"><br>
+                        <input type="text" name="ciudad" placeholder="Ciudad"><br>
+                        <input type="text" name="codigo-postal" placeholder="Código Postal"><br>
+                        <input type="text" name="provincia" placeholder="Provincia"><br>
+                    </section>
+                    <section class="send">
+                        <input type="checkbox" name="aviso">
+                        <label for="aviso"> Acepto el aviso legal</label><br>
+                        <input class="button" type="submit" value="Registrarse">
+                    </section>
+                </form>
+            </section>
+            
+            <footer>
+
+                <!--- FORMUALARIO PARA PONERSE EN CONTACTO --->
+                <section class="contact-us">
+                    <h1>Contacta con nosotros</h1>
+                    <p>
+                        <a href="index.html">www.bikesation.com</a>
+                        ·  
+                        <a href="mailto:info@bikestation.com">info@bikestation.com</a>
+                    </p>
+                    <form>
+                        <label for="nombre">Nombre </label>
+                        <input type="text" name="nombre"><br>
+                        <label for="apellidos">Apellidos </label>
+                        <input type="text" name="apellidos"><br>
+                        <label for="email">E-mail </label>
+                        <input type="text" name="email"><br>
+                        <label for="comentarios">Comentarios </label>
+                        <textarea name="comentarios" rows="5"></textarea><br>
+                        <span class="legal">
+                            <input type="checkbox" name="legal">
+                            <label for="legal"> Acepto el aviso legal</label><br>
+                            <input class="button" type="submit" value="Enviar">
+                        </span>
+                        
+                    </form>
+                </section>
+
+                <section>
+                </section>
+
+                <!--- MAPA CON LA UBICACIÓN DE LA TIENDA --->
+                <section class="location">
+                    <h1>Localización</h1>
+                    <p>Araba Kalea, 41, 01006 barnekaldea, Araba</p>
+                    <img src="img/localizacion.jpg" alt="google-maps-ubicacion" />
+
+                    <div class="social-networks">
+                        <a href="facebook.com/bikestation"><img src="img/facebook.png" alt="facebook-logo" /></a>
+                        <a href="twitter.com/bikestation"><img src="img/twitter.png" alt="twitter-logo" /></a>
+                        <a href="instagram.com/bikestation"><img src="img/instagram.png" alt="instagram-logo" /></a>        
+                    </div>
+                </section>
+            </footer>
+        </main> 
+    </body>
+</html>
